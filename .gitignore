@@ -1,0 +1,23 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# --- Virtual Environment ---
+venv/
+
+# --- IDE ---
+.vscode/
+
+# --- Secrets & Configs ---
+.env
+config.local.py
+
+# --- Database ---
+*.db
+*.sqlite3
+
+# --- Logs ---
+*.log
