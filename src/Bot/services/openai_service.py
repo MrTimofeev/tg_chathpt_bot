@@ -47,7 +47,7 @@ class OpenAIService:
 
             if not response.choices or not response.choices[0].message.content:
                 logger.warning("Получен пустой ответ от OpenAI")
-                return "Извините, я не смог сненерировать ответ. Попробуйте еще раз."
+                return "Извините, я не смог сгенерировать ответ. Попробуйте еще раз."
 
             return response.choices[0].message.content
 

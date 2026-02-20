@@ -1,5 +1,5 @@
 from .session import get_session, init_db
-from .model import Dialog
+from .models import Dialog
 from .crud import get_history, save_message, clear_history
 
 __all__ = [

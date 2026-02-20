@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func
 from sqlalchemy.orm import selectinload
 
-from .model import Dialog, Message
+from .models import Dialog, Message
 from ..config import config
 
 
@@ -36,11 +36,11 @@ async def get_history(session: AsyncSession, user_id: int, limit: int = None) ->
     
     dialog = await get_or_create_dialog(session, user_id)
     
-    # Выбираем последние N сообщений, сортируя по ID (или created_at)
+    # Выбираем последние N сообщений, сортируя по ID
     result = await session.execute(
         select(Message)
         .where(Message.dialog_id == dialog.id)
-        .order_by(Message.created_at.desc())
+        .order_by(Message.id.desc())
         .limit(limit)
     )
     
